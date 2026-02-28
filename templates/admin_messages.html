@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body class="admin-page">
+
+  <h1>Admin Dashboard</h1>
+  
+  <div class="admin-nav-links">
+    <a href="{{ url_for('home') }}"><i class='bx bx-home'></i> View Website</a>
+    <a href="{{ url_for('logout') }}"><i class='bx bx-log-out'></i> Logout</a>
+  </div>
+
+  <!-- Contact Messages Section -->
+  <div class="table-container">
+    <h3>Contact Messages</h3>
+    {% if messages %}
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Subject</th>
+          <th>Message</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for msg in messages %}
+        <tr>
+          <td>{{ msg[0] }}</td>
+          <td>{{ msg[1] }}</td>
+          <td>{{ msg[2] }}</td>
+          <td>{{ msg[3] }}</td>
+          <td>{{ msg[4] }}</td>
+          <td>{{ msg[5] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <p class="empty-message">No messages found.</p>
+    {% endif %}
+  </div>
+
+  <!-- Chatbot Logs Section -->
+  <div class="table-container chat-table">
+    <h3>Chatbot History</h3>
+    {% if chats %}
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>User Query</th>
+          <th>Bot Response</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for chat in chats %}
+        <tr>
+          <td>{{ chat[0] }}</td>
+          <td>{{ chat[1] }}</td>
+          <td>{{ chat[2] }}</td>
+          <td>{{ chat[3] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <p class="empty-message">No chat logs found.</p>
+    {% endif %}
+  </div>
+
+</body>
+</html>
+

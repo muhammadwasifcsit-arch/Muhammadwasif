@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portfolio - Manoj Yadav</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="{{ url_for('home') }}" class="logo">Portfolio.</a>
+  <nav class="navbar">
+    <a href="{{ url_for('home') }}" class="portfolio-back-link" style="--i: 1">Back to Organization</a>
+  </nav>
+</header>
+
+<!-- STUDENT PROFILE SECTION -->
+<section class="home" id="home">
+  <div class="home_content">
+    <h3 style="color: #0ef;">Student Profile</h3>
+    <h1>Manoj Yadav</h1>
+    <h3>Roll No: <span style="color: #fff">2023-MCA-001</span></h3>
+    <h3>Department: <span style="color: #fff">MCA (Master of Computer Applications)</span></h3>
+    <h3>Semester: <span style="color: #fff">2nd Semester</span></h3>
+    <p>
+      A passionate developer and MCA student at KNIT Sultanpur with expertise in 
+      Frontend Development and Backend Logic.
+    </p>
+    <div class="home_sci">
+      <a href="https://www.linkedin.com/in/manoj-yadav9627/" style="--i: 6"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/ManojYadav72" style="--i: 7"><i class="bx bxl-github"></i></a>
+    </div>
+    <a href="#skills" class="btn_box">View Skills</a>
+  </div>
+
+  <div class="home_img">
+    <img src="{{ url_for('static', filename='assets/pphoto.png') }}" alt="Manoj Yadav" style="border-radius: 50%;" />
+  </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section class="about" id="skills" style="padding-top: 50px;">
+  <div class="container">
+    <h1 class="sub-title">Technical <span>Skills</span></h1>
+    <div class="services-list">
+      <div>
+        <i class="bx bxl-html5" style="color: #00eeff"></i>
+        <h2>Frontend</h2>
+        <p>HTML5, CSS3, JavaScript, React.js, Bootstrap, Tailwind CSS.</p>
+      </div>
+      <div>
+        <i class="bx bxl-python" style="color: #00eeff"></i>
+        <h2>Backend</h2>
+        <p>Python, Flask, Django Basics, REST APIs.</p>
+      </div>
+      <div>
+        <i class="bx bxs-data" style="color: #00eeff"></i>
+        <h2>Database</h2>
+        <p>SQLite, MySQL, MongoDB Basics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT INFO -->
+<section class="contact" id="contact">
+  <div class="contact-text">
+    <h4>Contact Information</h4>
+    <div class="contact-list">
+      <li><i class="bx bxs-envelope" style="color: #00eeff"></i> manojyadav9027@gmail.com</li>
+      <li><i class="bx bxs-phone" style="color: #00eeff"></i> +91 9627587187</li>
+      <li><i class="bx bxs-map" style="color: #00eeff"></i> KNIT Sultanpur, UP, India</li>
+    </div>
+  </div>
+</section>
+
+<div class="last-text">
+  <p>© 2025 Student Portfolio - Manoj Yadav</p>
+</div>
+
+</body>
+</html>

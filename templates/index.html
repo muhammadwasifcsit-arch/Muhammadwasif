@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechNova Solutions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='assets/pphoto-removebg-preview.png') }}">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="#home" class="logo">TechNova.</a>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-controls="navbar" aria-expanded="false">
+    <i class="bx bx-menu"></i>
+  </button>
+  
+  <nav class="navbar" id="navbar">
+    <div class="nav-links">
+        <a href="#home" style="--i: 1">Home</a>
+        <a href="#about-heading" style="--i: 2">About</a>
+        <a href="#services-heading" style="--i: 3">Services</a>
+        <a href="#project-heading" style="--i: 4">Projects</a>
+        <a href="{{ url_for('student_portfolio') }}" style="--i: 5">Portfolio</a>
+        <a href="#contact-heading" style="--i: 6">Contact</a>
+    </div>
+    
+    <!-- User Auth Section -->
+    <div class="nav-auth">
+      {% if session.get('user_id') %}
+        <span class="user-name">Hi, {{ session.get('first_name') }}</span>
+        <a href="{{ url_for('logout') }}" class="auth-btn logout-btn">Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}" class="auth-btn">Login</a>
+        <a href="{{ url_for('register') }}" class="auth-btn register-btn">Register</a>
+      {% endif %}
+    </div>
+  </nav>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<!-- HOME -->
+<section class="home" id="home">
+  <div class="home_content">
+    <h3 style="color: #0ef;">Welcome To</h3>
+    <h1>TechNova Solutions</h1>
+    <h3>We Build <span class="texted" style="color: #0ef"></span></h3>
+    <p>
+      We are a leading software house specializing in modern web applications, 
+      UI/UX design, and digital transformation. We turn ideas into digital reality.
+    </p>
+    <div class="home_sci">
+      <a href="#" style="--i: 6"><i class="bx bxl-linkedin"></i></a>
+      <a href="#" style="--i: 7"><i class="bx bxl-instagram-alt"></i></a>
+      <a href="#" style="--i: 8"><i class="bx bxl-facebook-circle"></i></a>
+    </div>
+    <a href="#about-heading" class="btn_box">More About Us</a>
+  </div>
+
+  <div class="home_img">
+    <img src="{{ url_for('static', filename='assets/home-Image.png') }}" alt="Developer Hero Image" />
+  </div>
+</section>
+
+<!-- ABOUT ORGANIZATION -->
+<div class="about-heading" id="about-heading"><h2>About<span style="color: #0ef;"> Us</span></h2></div>
+<section class="about" id="about">
+  <div class="about-img">
+    <img src="{{ url_for('static', filename='assets/pphoto.png') }}" alt="Team" />
+  </div>
+  <div class="about-text">
+    <h4>Innovative Software House !</h4>
+    <p>
+      <b>TechNova Solutions</b> is dedicated to delivering high-quality digital solutions. 
+      Founded with a passion for technology, we specialize in creating responsive websites, 
+      robust backend systems, and engaging user interfaces. Our team consists of talented 
+      developers and designers committed to excellence.
+    </p>
+    <a href="#contact" class="btn_box">Hire Us</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <div class="services" id="services">
+    <div class="container">
+      <h1 class="sub-title" id="services-heading">Our <span>Services</span></h1>
+      <div class="services-list">
+        <div>
+          <i class="bx bx-code" style="color: #00eeff"></i>
+          <h2>Web Development</h2>
+          <p>Full-stack web development using Python Flask, Django, and modern JavaScript frameworks.</p>
+          <a href="#contact" class="read">Get Quote</a>
+        </div>
+        <div>
+          <i class="bx bx-crop" style="color: #00eeff"></i>
+          <h2>UI/UX Design</h2>
+          <p>User-centric design using Figma and Adobe XD to create intuitive interfaces.</p>
+          <a href="#contact" class="read">Get Quote</a>
+        </div>
+        <div>
+          <i class='bx bxl-github' style='color:#00eeff'></i>
+          <h2>Tech Consultancy</h2>
+          <p>Expert advice on software architecture, deployment strategies, and database management.</p>
+          <a href="#contact" class="read">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="project">
+  <div class="main-text">
+    <h2 id="project-heading">Our <span>Projects</span></h2>
+    <div class="portfolio-content">
+      <div class="project-card">
+        <div class="row">
+          <img src="{{ url_for('static', filename='assets/clothsweb.png') }}" alt="Project" />
+          <div class="layer">
+            <h5>E-Commerce Platform</h5>
+            <p>Developed a stylish Clothing website with responsive grid layouts.</p>
+            <a href="#" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="row">
+          <img src="{{ url_for('static', filename='assets/EspressoNest.png') }}" alt="Project" />
+          <div class="layer">
+            <h5>CaffeNest</h5>
+            <p>Responsive coffee shop website featuring animations and smooth design.</p>
+            <a href="#" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<h2 class="contact-heading" id="contact-heading">Contact <span>Us</span></h2>
+<section class="contact" id="contact">
+  <div class="contact-text">
+    <h4>Let's Work Together !</h4>
+    <p>Have a project in mind? Let's discuss how we can help you achieve your goals.</p>
+    <div class="contact-list">
+      <li><i class="bx bxs-send" style="color: #00eeff"></i> manojyadav9027@gmail.com</li>
+      <li><i class="bx bxs-phone-call" style="color: #00eeff"></i> +91 9627587187</li>
+    </div>
+  </div>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <div class="contact-form">
+    <form action="{{ url_for('submit_contact') }}" method="POST">
+      <input type="text" name="name" placeholder="Enter Your Name" required />
+      <input type="email" name="email" placeholder="Enter Your Email" required />
+      <input type="text" name="subject" placeholder="Enter Your Subject" />
+      <textarea name="message" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
+      <input type="submit" value="Submit" class="send" />
+    </form>
+  </div>
+</section>
+
+<!-- CHATBOT -->
+<div class="chatbot-container" id="chatbot-container">
+  <div class="chatbot-header">
+    <span>Chat Support (AI)</span>
+    <button onclick="toggleChatbot()">×</button>
+  </div>
+  <div class="chatbot-body" id="chatbot-body">
+    <div class="bot-msg">Hello! I am connected to ChatGPT. Ask me anything!</div>
+  </div>
+  <div class="chatbot-footer">
+    <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleEnter(event)">
+    <button onclick="sendMessage()"><i class='bx bxs-send'></i></button>
+  </div>
+</div>
+<button class="chat-toggle-btn" onclick="toggleChatbot()"><i class='bx bxs-message-dots'></i></button>
+
+<div class="last-text">
+  <p>© 2025 TechNova Solutions. Developed by <strong>Manoj Yadav</strong></p>
+</div>
+
+<a href="#home" class="top" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
