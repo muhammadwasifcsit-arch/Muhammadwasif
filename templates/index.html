@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="icon" href="{{ url_for('static', filename='assets/pphoto-removebg-preview.png') }}">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -83,59 +84,128 @@
 </section>
 
 <!-- SERVICES -->
-<section>
-  <div class="services" id="services">
-    <div class="container">
-      <h1 class="sub-title" id="services-heading">Our <span>Services</span></h1>
-      <div class="services-list">
-        <div>
-          <i class="bx bx-code" style="color: #00eeff"></i>
-          <h2>Web Development</h2>
-          <p>Full-stack web development using Python Flask, Django, and modern JavaScript frameworks.</p>
-          <a href="#contact" class="read">Get Quote</a>
-        </div>
-        <div>
-          <i class="bx bx-crop" style="color: #00eeff"></i>
-          <h2>UI/UX Design</h2>
-          <p>User-centric design using Figma and Adobe XD to create intuitive interfaces.</p>
-          <a href="#contact" class="read">Get Quote</a>
-        </div>
-        <div>
-          <i class='bx bxl-github' style='color:#00eeff'></i>
-          <h2>Tech Consultancy</h2>
-          <p>Expert advice on software architecture, deployment strategies, and database management.</p>
-          <a href="#contact" class="read">Get Quote</a>
-        </div>
-      </div>
+<section id="services" class="services-section">
+  <div class="services-wrap">
+    <h2 id="services-heading" class="services-title">Services</h2>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon icon-front-end"><i class="ri-layout-4-fill"></i></div>
+        <h3>Front-End Development</h3>
+        <p>Creating responsive and interactive user interfaces using modern web technologies.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon icon-uiux"><i class="ri-pen-nib-fill"></i></div>
+        <h3>UI/UX Design</h3>
+        <p>Designing intuitive and visually appealing user experiences for web and mobile applications.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon icon-fullstack"><i class="ri-code-s-slash-line"></i></div>
+        <h3>Full-Stack Projects</h3>
+        <p>Developing end-to-end web applications with both front-end and back-end functionalities.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon icon-mobile"><i class="ri-smartphone-line"></i></div>
+        <h3>Mobile App Development</h3>
+        <p>Building user-friendly mobile applications for Android platforms using Flutter and React Native.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon icon-social"><i class="ri-share-fill"></i></div>
+        <h3>Social Media Marketing</h3>
+        <p>Promoting and managing businesses on platforms like Facebook, Instagram, Twitter, and LinkedIn.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon icon-office"><i class="ri-file-fill"></i></div>
+        <h3>MS Office Services</h3>
+        <p>Expertise in MS Word, Excel, PowerPoint, and Power BI for business productivity solutions.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon icon-graphic"><i class="ri-palette-line"></i></div>
+        <h3>Graphic Designing Services</h3>
+        <p>Delivering innovative designs to elevate your brand and captivate your audience using Adobe software, Canva, and AI tools.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon icon-misc"><i class="ri-lightbulb-flash-fill"></i></div>
+        <h3>Other Miscellaneous Services</h3>
+        <p>Providing tailored solutions and custom services for any unique requirements. You name it, we'll make it happen!</p>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="project">
-  <div class="main-text">
-    <h2 id="project-heading">Our <span>Projects</span></h2>
-    <div class="portfolio-content">
-      <div class="project-card">
-        <div class="row">
-          <img src="{{ url_for('static', filename='assets/clothsweb.png') }}" alt="Project" />
-          <div class="layer">
-            <h5>E-Commerce Platform</h5>
-            <p>Developed a stylish Clothing website with responsive grid layouts.</p>
-            <a href="#" target="_blank"><i class="bx bx-link-external"></i></a>
-          </div>
-        </div>
+<section id="project" class="section project">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title" id="project-heading">Projects</h2>
+      <span class="section__subtitle">My recent work</span>
+    </div>
+    <div class="d-grid project__wrapper">
+      <div class="project__content">
+        <img src="{{ url_for('static', filename='assets/Spotify-Clone.png') }}" alt="Cryptoverse" class="project__img">
+        <a href="https://cryptoverse2x.netlify.app/" class="project__link" target="_blank" rel="noopener noreferrer">
+          <h3 class="project__title">Cryptoverse</h3>
+        </a>
+        <p class="project__description">Cryptoverse is a React app using the CoinGecko API to display real-time cryptocurrency data with search and top market-cap listings in multiple currencies.</p>
+        <a href="https://github.com/HamzaZaidiX/Cryptoverse" class="project__link" target="_blank" rel="noopener noreferrer">View Project <i class="ri-arrow-right-line"></i></a>
       </div>
-      <div class="project-card">
-        <div class="row">
-          <img src="{{ url_for('static', filename='assets/EspressoNest.png') }}" alt="Project" />
-          <div class="layer">
-            <h5>CaffeNest</h5>
-            <p>Responsive coffee shop website featuring animations and smooth design.</p>
-            <a href="#" target="_blank"><i class="bx bx-link-external"></i></a>
-          </div>
-        </div>
+
+      <div class="project__content">
+        <img src="{{ url_for('static', filename='assets/simongame.png') }}" alt="Hangman Game" class="project__img">
+        <a href="https://play-hangman-shjz.netlify.app/" class="project__link" target="_blank" rel="noopener noreferrer">
+          <h3 class="project__title">Hangman Game</h3>
+        </a>
+        <p class="project__description">Hangman Game built with Vite JS, TypeScript, and custom CSS, designed for a fun multiplayer word guessing experience.</p>
+        <a href="https://github.com/HamzaZaidiX/Hangman-Game" class="project__link" target="_blank" rel="noopener noreferrer">View Project <i class="ri-arrow-right-line"></i></a>
       </div>
+
+      <div class="project__content">
+        <img src="{{ url_for('static', filename='assets/clothsweb.png') }}" alt="Nike Landing Page" class="project__img">
+        <a href="https://nike-shjz.netlify.app/" class="project__link" target="_blank" rel="noopener noreferrer">
+          <h3 class="project__title">Nike Landing Page</h3>
+        </a>
+        <p class="project__description">Nike landing page built using React.js and Tailwind CSS as a responsive and visually appealing product-focused website.</p>
+        <a href="https://github.com/HamzaZaidiX/Nike-Landing-Page" class="project__link" target="_blank" rel="noopener noreferrer">View Project <i class="ri-arrow-right-line"></i></a>
+      </div>
+
+      <div class="project__content">
+        <img src="{{ url_for('static', filename='assets/To-Do-App.png') }}" alt="Linktree Clone" class="project__img">
+        <a href="https://github.com/HamzaZaidiX/Linktree-Clone" class="project__link" target="_blank" rel="noopener noreferrer">
+          <h3 class="project__title">Linktree Clone</h3>
+        </a>
+        <p class="project__description">Linktree Clone created with Next.js, MongoDB, and Tailwind CSS so users can share all social links from a single page.</p>
+        <a href="https://github.com/HamzaZaidiX/Linktree-Clone" class="project__link" target="_blank" rel="noopener noreferrer">View Project <i class="ri-arrow-right-line"></i></a>
+      </div>
+
+      <div class="project__content">
+        <img src="{{ url_for('static', filename='assets/Calculator.png') }}" alt="Gemini AI Clone" class="project__img">
+        <a href="https://gemini-clone-shjz.netlify.app/" class="project__link" target="_blank" rel="noopener noreferrer">
+          <h3 class="project__title">Gemini AI Clone</h3>
+        </a>
+        <p class="project__description">Gemini Clone recreates core Gemini AI interactions using Google Gemini API with React JS, Vite JS, and custom CSS styling.</p>
+        <a href="https://github.com/HamzaZaidiX/Gemini-Clone" class="project__link" target="_blank" rel="noopener noreferrer">View Project <i class="ri-arrow-right-line"></i></a>
+      </div>
+
+      <div class="project__content">
+        <img src="{{ url_for('static', filename='assets/GuessNumberGame.png') }}" alt="News 4U" class="project__img">
+        <a href="https://github.com/HamzaZaidiX/News-4-U" class="project__link" target="_blank" rel="noopener noreferrer">
+          <h3 class="project__title">News 4U</h3>
+        </a>
+        <p class="project__description">News 4U is a fast news platform built with Next.js and TypeScript, integrated with a news API to deliver fresh stories quickly.</p>
+        <a href="https://github.com/HamzaZaidiX/News-4-U" class="project__link" target="_blank" rel="noopener noreferrer">View Project <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+    <div class="project-more-wrap">
+      <a href="https://github.com/HamzaZaidiX?tab=repositories" class="btn--primary" target="_blank" rel="noopener noreferrer">
+        View More Projects
+        <i class="ri-arrow-down-s-line"></i>
+      </a>
     </div>
   </div>
 </section>
