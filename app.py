@@ -236,19 +236,7 @@ def chatbot():
                   (user_message, response, datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
         conn.commit()
         conn.close()
-    except:
-        pass
-
-    return jsonify({"response": response})
-    # Log chat to database
-    try:
-        conn = sqlite3.connect(DB_NAME)
-        c = conn.cursor()
-        c.execute("INSERT INTO chat_logs (user_query, bot_response, timestamp) VALUES (?, ?, ?)",
-                  (user_message, response, datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
-        conn.commit()
-        conn.close()
-    except:
+    except Exception:
         pass
 
     return jsonify({"response": response})
